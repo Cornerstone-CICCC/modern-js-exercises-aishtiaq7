@@ -20,6 +20,7 @@ const sumLargestNumbers = function (data) {
       }) 
     .reverse()
   return sortedData[0] + sortedData[1];
+  // return 99;
 };
 
 console.log(sumLargestNumbers([ 10])); // 11
