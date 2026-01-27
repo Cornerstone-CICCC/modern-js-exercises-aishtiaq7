@@ -7,10 +7,22 @@ Create a function named sumLargestNumbers that will receive an array of numbers 
 */
 
 const sumLargestNumbers = function (data) {
-  // Put your solution here
-  return 11;
+  if (data.length < 2 ) {
+    return 'Less than 2 items';
+  }
+  const sortedData = data
+    .sort((a, b) => {
+        if (a > b) {
+          return 1;
+        } else if (b > a) {
+          return -1;
+        } else return 0;
+      }) 
+    .reverse()
+  return sortedData[0] + sortedData[1];
 };
 
+console.log(sumLargestNumbers([ 10])); // 11
 console.log(sumLargestNumbers([1, 10])); // 11
 console.log(sumLargestNumbers([1, 2, 3])); // 5
 console.log(sumLargestNumbers([10, 4, 34, 6, 92, 2])); // 126
