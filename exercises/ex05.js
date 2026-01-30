@@ -19,8 +19,39 @@ Use some sort of looping. Do Not use String.prototype.replace
 */
 
 const urlEncode = function (text) {
-  // Put your solution here
+  //approach 1
+  // text = text.trim();
+  // text = text.split(" ")
+  // text = text.join("%20")
+  // return text;
+
+  //approach number #2: 
+  let encodedText = ""; 
+  text = text.trim();
+  for ( const char of text) {
+    const sum = 2 +2 ; // O(1)
+    const sum1 = 2 -2 ; // O(1)
+
+    if( char === " "){
+      encodedText += "%20";
+    } else { 
+      encodedText += char;
+    }
+  }
+  return encodedText;
 };
+
+/* 
+    Space Complexity : O(n).  Big Oh of N
+    Time  Complexity : O(n) 
+
+
+    in terms of "n"; 
+
+
+*/
+
+
 
 console.log(urlEncode("cornerstone college")); //cornerstone%20college
 console.log(urlEncode(" cornerstone college ")); //cornerstone%20college
