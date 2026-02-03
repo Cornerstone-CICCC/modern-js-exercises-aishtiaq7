@@ -8,13 +8,33 @@ Create a function named multiplicationTable that receives a number maxValue as i
 */
 
 const multiplicationTable = function (maxValue) {
-  // Your code here
-};
+  // if(maxValue === 1){
+  //   return '1';
+  // };
 
-console.log(multiplicationTable(1));
+  let table = "";
+
+  for (let i = 1 ; i <= maxValue ; i++ ){
+    for (let j = 1; j <= maxValue ; j++){
+      // console.log(`i{${i}} * j{${j}} ==> ${i*j}`);
+      let tempValue = i*j
+      table += tempValue + " " // table = table + i 
+    }
+    table = table.trim() + "\n";
+  }
+  return table.trim();
+};
+/* 
+    Space Complexity:    O(n) * O(n) == O(n^2); n is the maxValue
+    Time Complexity:     O(n) * O(n) == O(n^2); n is the maxValue
+*/
+
+
+
+// console.log(multiplicationTable(1));
 // 1
 
-console.log(multiplicationTable(5));
+// console.log(multiplicationTable(5));
 // 1 2 3 4 5
 // 2 4 6 8 10
 // 3 6 9 12 15
