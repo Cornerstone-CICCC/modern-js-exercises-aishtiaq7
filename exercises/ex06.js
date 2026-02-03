@@ -20,8 +20,34 @@ Note: There may be multiple available spots for a particular vehicle. It does no
 */
 
 const whereCanIPark = function (spots, vehicle) {
-  // Code here!
+
+  const vehicleTypes = {
+    regular: ["R"], 
+    small: ["S", "R"], 
+    motorcycle: ["R", "S", "M"]
+  }
+
+  // console.log( vehicleTypes['regular']  )
+  // console.log( vehicleTypes['small']  )
+  // console.log( vehicleTypes.motorcycle  )
+
+  for ( let y = 0; y < spots.length ; y++){
+    // console.log(`y at ${y}`, spots[y]);
+    for ( let x = 0; x < spots[y].length ; x ++ ){
+      // console.log(`\tx at ${x}`, spots[y][x]);
+      if (vehicleTypes[vehicle].includes(spots[y][x]) ){
+        return [x,y];
+      }
+    }
+  }
+  return false;
 };
+
+
+/* 
+    Space Complexity : O(1) ; constant 
+    Time Complexity:   O(n) x O(m) == O(n*m);
+*/
 
 console.log(
   whereCanIPark(
@@ -34,6 +60,7 @@ console.log(
       ["S", "r", "s", "m", "r", "M"], // 3
       ["S", "r", "s", "m", "r", "M"], // 4
       ["S", "r", "S", "M", "M", "S"], // 5
+ 
     ],
     "regular"
   )
