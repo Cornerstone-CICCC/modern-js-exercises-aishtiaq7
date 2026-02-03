@@ -21,11 +21,16 @@ const repeatNumbers = function (data) {
     results.push(tempValue);
   }
   return results.join(", ")
-
-
 };
 
+/* 
+    Time Complexity:    O(n) ; n is the size of data input. 
+    Space Complexity:   O(n) ; n is the size of data input 
+*/
+
+
 console.log(repeatNumbers([[1, 10]])); // 1111111111
+console.log(repeatNumbers([[1, 1000000000000]])); // 1111111111
 console.log(
   repeatNumbers([
     [1, 2],
