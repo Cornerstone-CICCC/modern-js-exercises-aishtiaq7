@@ -9,8 +9,40 @@ Create a function named talkingCalendar that takes in a date string with the for
 */
 
 const talkingCalendar = function (date) {
-  // Your code here
+  let [year, month, day] = date.split("/");
+  month = parseInt(month);
+  day = parseInt(day);
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  const monthName = months[month - 1];
+  let daySuffix = "th";
+  if (day % 10 === 1 && day !== 11) {
+    daySuffix = "st";
+  } else if (day % 10 === 2 && day !== 12) {
+    daySuffix = "nd";
+  } else if (day % 10 === 3 && day !== 13) {
+    daySuffix = "rd";
+  }
+  return `${monthName} ${day}${daySuffix}, ${year}`;
 };
+
+/* 
+  Space Complexity: Constant 
+  Time Complexity:  Constant
+*/
 
 console.log(talkingCalendar("2017/12/02")); // December 2nd, 2017
 console.log(talkingCalendar("2007/11/11")); // November 11th, 2007
