@@ -24,6 +24,12 @@ const organizeInstructors = function (instructors) {
   }
   return organized;
 };
+/* 
+    Space Complexity: O(n) where n is the input size; 
+    Time Complexity: O(n) where n is the size of input (or instructors)
+
+
+*/
 
 // console.log(
 //   organizeInstructors([
