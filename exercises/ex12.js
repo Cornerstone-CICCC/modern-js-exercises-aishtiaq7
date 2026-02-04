@@ -19,11 +19,7 @@ Note
 This one is a doozy! We might want to start by creating a helper function called ingredientCheck() that will take in one bakery at a time, along with the recipes.ingredients array to check if the given bakery possesses any of the ingredients from that recipe.
 
 */
-
-
-
 const chooseRecipe = function (bakeryA, bakeryB, recipes) {
-
   const hasIngredient = function (bakery, ingredient){
     return bakery.includes(ingredient);
   }
@@ -32,22 +28,15 @@ const chooseRecipe = function (bakeryA, bakeryB, recipes) {
     const firstIngredient = recipe.ingredients[0];
     const secondIngredient = recipe.ingredients[1];
 
-    // console.log(firstIngredient, secondIngredient);
-
-
     // either ingredient can come from either bakery: 
     const firstInASecondInB = hasIngredient(bakeryA, firstIngredient) && hasIngredient(bakeryB, secondIngredient);
-
     const firstInBSecondInA = hasIngredient(bakeryB, firstIngredient) && hasIngredient(bakeryA, secondIngredient);
 
     if ( firstInASecondInB || firstInBSecondInA){
       return recipe.name; 
     }
-
   }
-  
 };
-
 let bakeryA = ["saffron", "eggs", "tomato paste", "coconut", "custard"];
 let bakeryB = ["milk", "butter", "cream cheese"];
 let recipes = [
