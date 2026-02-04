@@ -37,6 +37,14 @@ const chooseRecipe = function (bakeryA, bakeryB, recipes) {
     }
   }
 };
+
+/* 
+    Space Complexity: O(1) ; C; Constant; 
+    Time Complexity: 
+      - O(R * (A+B)) where , A is size of BakeryA, B is size of BakeryB, and R is size of recipes. 
+
+*/
+
 let bakeryA = ["saffron", "eggs", "tomato paste", "coconut", "custard"];
 let bakeryB = ["milk", "butter", "cream cheese"];
 let recipes = [
